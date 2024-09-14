@@ -4,6 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
+  <script>
+      window.onload = function() {
+    setTimeout(function() {
+      document.querySelector('.login-container').style.opacity = '1';
+    }, 6000); // 6000ms = 6 seconds
+  };
+
+  const video = document.getElementById('videoElement');
+
+  </script>
   <title>Document</title>
 </head>
 <body>
@@ -15,6 +25,16 @@
     <div class="title">PrintPay</div>
   </div>
 </div>
+
+<div class="video-container">
+
+    <div class="video-container">
+      <video class="video"  autoplay loop muted id="videoElement">
+        <source src="LoginBackground.mp4" type="video/mp4">
+   
+      </video>
+</div>
+
 
 <div class="login-container">
   <div class="login-box">

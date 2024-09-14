@@ -3,20 +3,22 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* height: 100vh;
-    width: 100%; */
-    /* Set to exactly 100% of the viewport height */
+    width: 100%;
+    min-height: 100%;
     background: linear-gradient(to top, rgb(0, 255, 251), rgb(242, 0, 255));
     background-repeat: no-repeat;
+    background-attachment: fixed; /* Ensures the background sticks on scroll */
 }
 
 .main-container {
-
-    position: relative;
-    box-shadow: -8px -21px 250px -240px white inset;
-    border-radius: 51px;
-
+    background: linear-gradient(to top, rgb(0, 255, 251), rgb(242, 0, 255));
+    min-height: 100%; /* Ensures the container covers the entire viewport height */
+    width: 100%;
+    /* box-shadow: -8px -21px 250px -240px white inset; */
+    border-radius: 0px;
+    overflow: hidden;
 }
+
 
 .container {
     margin-top: 180px;
@@ -113,7 +115,7 @@ body {
 }
 
 .heading {
-    position: absolute;
+    position: relative;
     top: 51px;
     left: 77px;
     color: black;
@@ -174,7 +176,7 @@ body {
 .transaction-history,
 .order,
 .home {
-    position: absolute;
+    position: relative;
     top: 63px;
     padding: 8px;
     border-radius: 8px;
@@ -184,24 +186,24 @@ body {
 }
 
 .cart {
-    left: 631px;
+    left: 681px;
 }
 
 .documents {
-    left: 707px;
+    left: 720px;
 }
 
 .transaction-history {
-    left: 856px;
+    left: 760px;
     background: #F5F5F5;
 }
 
 .order {
-    left: 1092px;
+    left: 250px;
 }
 
 .home {
-    left: 543px;
+    left: 550px;
 }
 
 .printpay {
