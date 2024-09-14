@@ -1,0 +1,257 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* height: 100vh;
+    width: 100%; */
+    /* Set to exactly 100% of the viewport height */
+    background: linear-gradient(to top, rgb(0, 255, 251), rgb(242, 0, 255));
+    background-repeat: no-repeat;
+}
+
+.main-container {
+
+    position: relative;
+    box-shadow: -8px -21px 250px -240px white inset;
+    border-radius: 51px;
+
+}
+
+.container {
+    margin-top: 180px;
+}
+
+.navbar {
+    /* width: 100; */
+    display: flex;
+    align-items: center;
+}
+
+.profile-picture-container {
+    width: 150px;
+    height: 140px;
+    left: 27px;
+    top: 25px;
+    position: absolute;
+}
+
+.profile-picture {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    border-radius: 50px;
+}
+
+.brand {
+    left: 163px;
+    top: 60px;
+    position: absolute;
+    text-align: center;
+    font-size: 31px;
+    font-family: Inter;
+    font-weight: 600;
+    color: black;
+}
+
+.auth-buttons {
+    width: 178px;
+    height: 50px;
+    left: 1204px;
+    top: 63px;
+    position: absolute;
+    display: flex;
+    gap: 12px;
+}
+
+.auth-button {
+    height: 30px;
+    padding: 8px;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    font-size: 16px;
+    font-family: Inter;
+    font-weight: 400;
+}
+
+.sign-in {
+    flex: 2;
+    background: #E3E3E3;
+    border: 1px #767676 solid;
+    color: #1E1E1E;
+}
+
+.register {
+    flex: 2;
+    background: #000000;
+    border: 1px #000000 solid;
+    color: #ffffff;
+}
+
+
+
+.transaction-card {
+    width: 1432px;
+    height: 234px;
+    margin: 20px auto;
+    position: relative;
+}
+
+.background-box {
+    width: 1412px;
+    height: 224px;
+    background: #D9D9D9;
+    border-radius: 43px;
+    mix-blend-mode: luminosity;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.heading {
+    position: absolute;
+    top: 51px;
+    left: 77px;
+    color: black;
+    font-size: 37px;
+    font-family: Arial;
+    font-weight: 700;
+}
+
+.date,
+.amount {
+    position: absolute;
+    left: 77px;
+    color: black;
+    font-size: 38px;
+    font-family: Roboto;
+}
+
+.date {
+    top: 104px;
+}
+
+.amount {
+    top: 156px;
+}
+
+.signin-register {
+    display: flex;
+    position: absolute;
+    top: 53px;
+    left: 1207px;
+}
+
+.signin,
+.register {
+    padding: 8px;
+    border-radius: 8px;
+    height: 36px;
+    text-align: center;
+    font-size: 20px;
+    line-height: 20px;
+}
+
+.signin {
+    background: #E3E3E3;
+    border: 1px solid #767676;
+    color: #1E1E1E;
+}
+
+.register {
+    background: #2C2C2C;
+    border: 1px solid #2C2C2C;
+    color: #F5F5F5;
+    margin-left: 12px;
+}
+
+.cart,
+.documents,
+.transaction-history,
+.order,
+.home {
+    position: absolute;
+    top: 63px;
+    padding: 8px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 20px;
+    color: #1E1E1E;
+}
+
+.cart {
+    left: 631px;
+}
+
+.documents {
+    left: 707px;
+}
+
+.transaction-history {
+    left: 856px;
+    background: #F5F5F5;
+}
+
+.order {
+    left: 1092px;
+}
+
+.home {
+    left: 543px;
+}
+
+.printpay {
+    position: absolute;
+    left: 168px;
+    top: 60px;
+    text-align: center;
+    font-size: 31px;
+    font-family: Inter;
+    font-weight: 600;
+}
+
+.transaction-title {
+    position: relative;
+    margin-left: 50px;
+    font-size: 50px;
+    font-family: Arial;
+    font-weight: 700;
+
+    position: relative;
+}
+
+.profile-pictures {
+    position: absolute;
+    top: 28px;
+    left: 33px;
+    display: flex;
+}
+
+.profile-pictures img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    mix-blend-mode: screen;
+    box-shadow: 0px 4px 8.8px rgba(0, 0, 0, 0.25) inset;
+    margin-right: 10px;
+}
+
+.profile-overlay {
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+
+.gradient-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(235deg, #00F0FF 0%, white 100%), linear-gradient(235deg, rgba(255, 255, 255, 0) 42%, #FA00FF 100%);
+    border-radius: 73px;
+}
