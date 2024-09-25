@@ -11,69 +11,85 @@
 <body>
     <div class="container">
 
-        <div class="gradient-container">
+        <!-- <div class="gradient-container">
             <img class="img-absolute" src="Logo.png" />
         </div>
 
-        <!-- Video Section -->
-            <!-- <video class="video" controls>
-                <source src="your-video-file.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video> -->
+        <div class="menu">
 
-            <div class="menu">
+            <div class="menu-title">PrintPay</div>
+            <div class="menu-link">Home</div>
+            <div class="menu-link background-light">Cart</div>
+            <div class="menu-link">Documents</div>
+            <div class="menu-link flex-grow">Transaction History</div>
+            <div class="menu-link">Order</div>
+            <div class="auth-links">
+                <div class="auth-link 
+                ">Sign in</div>
+                <div class="auth-link dark">Register</div>
+            </div>
 
-                <div class="menu-title">PrintPay</div>
-                <div class="menu-link">Home</div>
-                <div class="menu-link background-light">Cart</div>
-                <div class="menu-link">Documents</div>
-                <div class="menu-link flex-grow">Transaction History</div>
-                <div class="menu-link">Order</div>
-                <div class="auth-links">
-                    <div class="auth-link light">Sign in</div>
-                    <div class="auth-link dark">Register</div>
+        </div> -->
+
+        <nav class="navbar">
+    
+            <div class="profile-container">
+
+                <img class="profile-img" src="Logo.png" />
+                <div class="title">PrintPay</div>
+
+                <div class="menu-item home" onclick="window.location.href='home.html'">Home</div>
+                <div class="menu-item cart" onclick="window.location.href='cart.html'">Cart</div>
+                <div class="menu-item documents" onclick="window.location.href='Documents.html'">Documents</div>
+                <div class="menu-item transaction-history" onclick="window.location.href='TransactionHistory.html'">
+                    Transaction History</div>
+                    <div class="menu-item order">Order</div>
+                    
+                    <div class="auth-buttons">
+                        <div class="auth-button sign-in">Sign in</div>
+                        <div class="auth-button register">Register</div>
+                    </div>
+            </div>
+        </nav>
+
+
+        <div class="content">
+
+            <div class="content-overlay"> </div>
+            <div class="cart-title">Cart</div>
+            <div class="first-sub-heading">
+                <div class="subtext-title">Selected Items</div>
+                <div class="subtext-title right">Total Cost</div>
+            </div>
+
+            <div class="first-item">
+                <div class="box first-box"></div>
+                <div class="first-box-text">
+                    <div class="title-large">RFID Transaction Points</div>
+                    <div class="subtext">Amount: 100</div>
+                    <div class="subtext">Transaction ID: 4532</div>
                 </div>
+                <div class="subtext-title-deduc">Deduction</div>
+            </div>
 
+            <div class="first-item">
+                <div class="box first-box"></div>
+                <div class="first-box-text">
+                    <div class="title-large">RFID Transaction Points</div>
+                    <div class="subtext">Amount: 100</div>
+                    <div class="subtext">Transaction ID: 4532</div>
+                </div>
+                <div class="subtext-title-deduc">Deduction</div>
+            </div>
+
+            <div class="proceed-btn">
+                <div class="proceed-text">Proceed TO Payment</div>
             </div>
 
 
-            <div class="content">
 
-                <div class="content-overlay"> </div>
-                <div class="cart-title">Cart</div>
-                <div class="first-sub-heading">
-                    <div class="subtext-title">Selected Items</div>
-                    <div class="subtext-title right">Total Cost</div>
-                </div>
-
-                <div class="first-item">
-                    <div class="box first-box"></div>
-                    <div class="first-box-text">
-                        <div class="title-large">RFID Transaction Points</div>
-                        <div class="subtext">Amount: 100</div>
-                        <div class="subtext">Transaction ID: 4532</div>
-                    </div>
-                    <div class="subtext-title-deduc">Deduction</div>
-                </div>
-
-                <div class="first-item">
-                    <div class="box first-box"></div>
-                    <div class="first-box-text">
-                        <div class="title-large">RFID Transaction Points</div>
-                        <div class="subtext">Amount: 100</div>
-                        <div class="subtext">Transaction ID: 4532</div>
-                    </div>
-                    <div class="subtext-title-deduc">Deduction</div>
-                </div>
-
-                <div class="proceed-btn">
-                    <div class="proceed-text">Proceed TO Payment</div>
-                </div>
-
-
-
-            </div>
         </div>
+    </div>
 
 </body>
 

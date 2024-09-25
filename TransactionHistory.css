@@ -30,71 +30,118 @@ body {
     align-items: center;
 }
 
-.profile-picture-container {
-    width: 150px;
-    height: 140px;
-    left: 27px;
-    top: 25px;
+
+.profile-container {
     position: absolute;
+    display: flex;
+    /* flex-direction: row; */
+    width: 275px;
+    height: 120px;
+    left: 0px;
+    top: 0px;
+    gap: 10px;
 }
 
-.profile-picture {
-    width: 100px;
-    height: 100px;
-    position: absolute;
-    border-radius: 50px;
+.profile-img {
+    position: relative;
+    width: 119px;
+    height: 111px;
+    left: 0px;
+    top: 0px;
 }
 
-.brand {
-    left: 163px;
-    top: 60px;
-    position: absolute;
+.title {
+    position: relative;
+    left: 0px;
+    top: 0px;
     text-align: center;
-    font-size: 31px;
+    justify-content: center;
+    color: black;
+    font-size: 38px;
     font-family: Inter;
     font-weight: 600;
-    color: black;
+    line-height: 120px;
+    word-wrap: break-word;
+}
+
+.menu-item {
+    position: absolute;
+    height: 20px;
+    padding: 10px;
+    border-radius: 8px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-family: Inter;
+    font-weight: 400;
+    color: #1E1E1E;
+}
+
+.documents {
+    left: 865px;
+    top: 40px;
+}
+
+.transaction-history {
+    left: 980px;
+    top: 40px;
+    width: 150px;
+    background: #F5F5F5;
+}
+
+.order {
+    left: 1165px;
+    top: 40px;
+}
+
+.home {
+    left: 685px;
+    top: 40px;
+}
+
+.cart {
+    left: 775px;
+    top: 40px;
 }
 
 .auth-buttons {
     width: 178px;
-    height: 50px;
-    left: 1204px;
-    top: 63px;
+    height: 30px;
+    left: 1265px;
+    top: 40px;
     position: absolute;
-    display: flex;
+    display: inline-flex;
     gap: 12px;
 }
 
 .auth-button {
-    height: 30px;
-    padding: 8px;
+    height: 32px;
+    padding: 3px;
     border-radius: 8px;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 80px;
+    gap: 10px;
     font-size: 16px;
     font-family: Inter;
     font-weight: 400;
 }
 
 .sign-in {
-    flex: 2;
+    flex: 1;
     background: #E3E3E3;
     border: 1px #767676 solid;
     color: #1E1E1E;
 }
 
 .register {
-    flex: 2;
-    background: #000000;
-    border: 1px #000000 solid;
-    color: #ffffff;
+    flex: 1;
+    background: #2C2C2C;
+    border: 1px #2C2C2C solid;
+    color: #F5F5F5;
 }
-
-
 
 .transaction-card {
     width: 1432px;
@@ -141,88 +188,12 @@ body {
     top: 156px;
 }
 
-.signin-register {
-    display: flex;
-    position: absolute;
-    top: 53px;
-    left: 1207px;
-}
-
-.signin,
-.register {
-    padding: 8px;
-    border-radius: 8px;
-    height: 36px;
-    text-align: center;
-    font-size: 20px;
-    line-height: 20px;
-}
-
-.signin {
-    background: #E3E3E3;
-    border: 1px solid #767676;
-    color: #1E1E1E;
-}
-
-.register {
-    background: #2C2C2C;
-    border: 1px solid #2C2C2C;
-    color: #F5F5F5;
-    margin-left: 12px;
-}
-
-.cart,
-.documents,
-.transaction-history,
-.order,
-.home {
-    position: relative;
-    top: 63px;
-    padding: 8px;
-    border-radius: 8px;
-    text-align: center;
-    font-size: 20px;
-    color: #1E1E1E;
-}
-
-.cart {
-    left: 681px;
-}
-
-.documents {
-    left: 720px;
-}
-
-.transaction-history {
-    left: 760px;
-    background: #F5F5F5;
-}
-
-.order {
-    left: 250px;
-}
-
-.home {
-    left: 550px;
-}
-
-.printpay {
-    position: absolute;
-    left: 168px;
-    top: 60px;
-    text-align: center;
-    font-size: 31px;
-    font-family: Inter;
-    font-weight: 600;
-}
-
 .transaction-title {
     position: relative;
     margin-left: 50px;
     font-size: 50px;
     font-family: Arial;
     font-weight: 700;
-
     position: relative;
 }
 

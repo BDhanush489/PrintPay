@@ -21,7 +21,7 @@ body {
 
 .video {
     transform: scale(1.2);
-    opacity: 0.7;
+    opacity: 0.8;
     /* opacity: 0; Removes the video */
     width: 100vw;
     /* Adjust video width */
