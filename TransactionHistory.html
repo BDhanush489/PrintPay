@@ -1,88 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="TransactionHistory.css">
     <title>Transaction History</title>
+    <script>
+        function goToHome() {
+            // Trigger the background fade-in by adding a class that changes the background color
+            document.querySelector('.home').classList.add('fade-in-bg');
+            document.querySelector('.transaction-history').style.backgroundColor = 'transparent';
+
+            // Delay the navigation by 900 ms
+            setTimeout(function () {
+                window.location.href = 'home.html';
+            }, 100);
+        }
+
+        function goToDocuments() {
+            // Trigger the background fade-in by adding a class that changes the background color
+            document.querySelector('.documents').classList.add('fade-in-bg');
+            document.querySelector('.transaction-history').style.backgroundColor = 'transparent';
+
+            // Delay the navigation by 900 ms
+            setTimeout(function () {
+                window.location.href = 'Documents.html';
+            }, 100);
+        }
+
+        function goToCart() {
+            document.querySelector('.cart').classList.add('fade-in-bg');
+            document.querySelector('.transaction-history').style.backgroundColor = 'transparent';
+
+            // Delay the navigation by 900 ms
+            setTimeout(function () {
+                window.location.href = 'Cart.html';
+            }, 100);
+        }
+    </script>
 </head>
+
 <body>
 
     <div class="main-container">
 
-        <!-- <nav class="navbar">
-        
-            <div class="profile-picture-container">
-                <img class="profile-picture" src="Logo.png" />
-            </div>
-        
-            <div class="brand">PrintPay</div>
-        
-            <div class="home">Home</div>
-            <div class="cart">Cart</div>
-            <div class="documents">Documents</div>
-            <div class="transaction-history">Transaction History</div>
-            <div class="order">Order</div>
-        
-        
-            <div class="auth-buttons">
-                <div class="auth-button sign-in">Sign in</div>
-                <div class="auth-button sign-in">Register</div>
-            </div>
-        
-        </nav> -->
 
         <nav class="navbar">
-    
+
             <div class="profile-container">
 
                 <img class="profile-img" src="Logo.png" />
                 <div class="title">PrintPay</div>
 
-                <div class="menu-item home" onclick="window.location.href='home.html'">Home</div>
-                <div class="menu-item cart" onclick="window.location.href='cart.html'">Cart</div>
-                <div class="menu-item documents" onclick="window.location.href='Documents.html'">Documents</div>
+                <div class="menu-item home" onclick="goToHome()">Home</div>
+                <div class="menu-item cart" onclick="goToCart()">Cart</div>
+                <div class="menu-item documents" onclick="goToDocuments()">Documents</div>
                 <div class="menu-item transaction-history" onclick="window.location.href='TransactionHistory.html'">
                     Transaction History</div>
-                    <div class="menu-item order">Order</div>
-                    
-                    <div class="auth-buttons">
-                        <div class="auth-button sign-in">Sign in</div>
-                        <div class="auth-button register">Register</div>
-                    </div>
+                <div class="menu-item order">Order</div>
+
+                <div class="auth-buttons">
+                    <div class="auth-button sign-in">Sign in</div>
+                    <div class="auth-button register">Register</div>
+                </div>
             </div>
         </nav>
-        
+
         <div class="container">
 
             <div class="transaction-title">Transaction History</div>
-        
+
             <div class="transaction-card">
                 <div class="background-box"></div>
                 <div class="heading">Point Purchase</div>
                 <div class="date">Date: 2023-02-23</div>
                 <div class="amount">Amount: 500 points</div>
             </div>
-        
+
             <div class="transaction-card">
                 <div class="background-box"></div>
                 <div class="heading">Point Purchase</div>
                 <div class="date">Date: 2023-02-23</div>
                 <div class="amount">Amount: 500 points</div>
             </div>
-        
+
             <div class="transaction-card">
                 <div class="background-box"></div>
                 <div class="heading">Point Purchase</div>
                 <div class="date">Date: 2023-02-23</div>
                 <div class="amount">Amount: 500 points</div>
             </div>
-        
+
         </div>
     </div>
-        </div>
-    
+    </div>
+
 </body>
+
 </html>
-
-

@@ -6,31 +6,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PrintPay Documents</title>
     <link rel="stylesheet" href="Documents.css">
+    <script>
+        function goToHome() {
+            // Trigger the background fade-in by adding a class that changes the background color
+            document.querySelector('.home').classList.add('fade-in-bg');
+            document.querySelector('.cart').style.backgroundColor = 'transparent';
+            
+            // Delay the navigation by 900 ms
+            setTimeout(function() {
+                window.location.href = 'home.html';
+            }, 100);
+        }
+       
+        function goToDocuments() {
+            // Trigger the background fade-in by adding a class that changes the background color
+            document.querySelector('.documents').classList.add('fade-in-bg');
+            document.querySelector('.cart').style.backgroundColor = 'transparent';
+            
+            // Delay the navigation by 900 ms
+            setTimeout(function() {
+                window.location.href = 'Documents.html';
+            }, 100);
+        }
+       
+        function goToTransactionHistory() {
+            // Trigger the background fade-in by adding a class that changes the background color
+            document.querySelector('.transaction-history').classList.add('fade-in-bg');
+            document.querySelector('.cart').style.backgroundColor = 'transparent';
+            
+            // Delay the navigation by 900 ms
+            setTimeout(function() {
+                window.location.href = 'TransactionHistory.html';
+            }, 100);
+        }
+
+        function goToCart() {
+            document.querySelector('.cart').classList.add('fade-in-bg');
+            document.querySelector('.transaction-history').style.backgroundColor = 'transparent';
+
+            // Delay the navigation by 900 ms
+            setTimeout(function () {
+                window.location.href = 'Cart.html';
+            }, 100);
+        }
+    </script>
 </head>
 
 <body>
     <div class="container">
-
-        <!-- <nav>
-            <div class="auth-buttons">
-                <div class="sign-in-button">Sign in</div>
-                <div class="register-button">Register</div>
-            </div>
-
-            <div class="cart">Cart</div>
-            <div class="documents">Documents</div>
-            <div class="transaction-history">Transaction History</div>
-            <div class="order">Order</div>
-            <div class="home" onclick="window.location.href='home.html'">Home</div>
-
-
-            <div class="title">PrintPay</div>
-            <div class="profile-pic">
-                <img src="Logo.png" class="pic" />
-                <div class="pic-overlay"></div>
-            </div>
-
-        </nav> -->
 
         <nav class="navbar">
     
@@ -39,11 +62,12 @@
                 <img class="profile-img" src="Logo.png" />
                 <div class="title">PrintPay</div>
 
-                <div class="menu-item home" onclick="window.location.href='home.html'">Home</div>
-                <div class="menu-item cart" onclick="window.location.href='cart.html'">Cart</div>
+                <div class="menu-item home" onclick="goToHome()">Home</div>
+                <div class="menu-item cart" onclick="goToCart()">Cart</div>
                 <div class="menu-item documents" onclick="window.location.href='Documents.html'">Documents</div>
-                <div class="menu-item transaction-history" onclick="window.location.href='TransactionHistory.html'">
+                <div class="menu-item transaction-history" onclick="goToTransactionHistory()">
                     Transaction History</div>
+
                     <div class="menu-item order">Order</div>
                     
                     <div class="auth-buttons">

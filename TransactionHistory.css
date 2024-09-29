@@ -7,12 +7,14 @@ body {
     min-height: 100%;
     background: linear-gradient(to top, rgb(0, 255, 251), rgb(242, 0, 255));
     background-repeat: no-repeat;
-    background-attachment: fixed; /* Ensures the background sticks on scroll */
+    background-attachment: fixed;
+    /* Ensures the background sticks on scroll */
 }
 
 .main-container {
     background: linear-gradient(to top, rgb(0, 255, 251), rgb(242, 0, 255));
-    min-height: 100%; /* Ensures the container covers the entire viewport height */
+    min-height: 100%;
+    /* Ensures the container covers the entire viewport height */
     width: 100%;
     /* box-shadow: -8px -21px 250px -240px white inset; */
     border-radius: 0px;
@@ -79,36 +81,51 @@ body {
 }
 
 .documents {
-    left: 865px;
+    left: 860px;
     top: 40px;
+    background-color: transparent;
+    transition: background-color 0.2s ease-in;
 }
 
 .transaction-history {
-    left: 980px;
+    left: 992px;
     top: 40px;
-    width: 150px;
+    width: 143px;
     background: #F5F5F5;
+    transition: background-color 0.2s ease-in;
+
 }
 
 .order {
-    left: 1165px;
+    left: 1185px;
     top: 40px;
 }
 
 .home {
     left: 685px;
     top: 40px;
+    background-color: transparent;
+    transition: background-color 0.2s ease-in;
 }
 
+
+
 .cart {
-    left: 775px;
+    left: 779px;
     top: 40px;
+    background-color: transparent;
+    transition: background-color 0.2s ease-in;
+}
+
+.fade-in-bg {
+    background-color: white;
+    /* The color it fades to */
 }
 
 .auth-buttons {
     width: 178px;
-    height: 30px;
-    left: 1265px;
+    height: 39.6px;
+    left: 1285px;
     top: 40px;
     position: absolute;
     display: inline-flex;

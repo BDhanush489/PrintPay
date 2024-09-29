@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -7,7 +8,8 @@ html, body {
     /* This allows the background to grow beyond the viewport if content is taller */
     background: linear-gradient(to top, rgb(0, 255, 251), rgb(242, 0, 255));
     background-repeat: no-repeat;
-    background-size: cover; /* Ensures the background covers the viewport fully */
+    background-size: cover;
+    /* Ensures the background covers the viewport fully */
 }
 
 
@@ -66,36 +68,49 @@ html, body {
 }
 
 .documents {
-    left: 865px;
+    left: 860px;
     top: 40px;
     background: #F5F5F5;
+    transition: background-color 0.2s ease-in;
 }
 
 .transaction-history {
-    left: 955px;
+    left: 992px;
     top: 40px;
-    width: 202px;
+    width: 143px;
+    background-color: transparent;
+    transition: background-color 0.2s ease-in;
+
 }
 
 .order {
-    left: 1165px;
+    left: 1185px;
     top: 40px;
 }
 
 .home {
     left: 685px;
     top: 40px;
+    background-color: transparent;
+    transition: background-color 0.2s ease-in;
 }
 
 .cart {
-    left: 775px;
+    left: 779px;
     top: 40px;
+    background-color: transparent;
+    transition: background-color 0.2s ease-in;
+}
+
+.fade-in-bg {
+    background-color: white;
+    /* The color it fades to */
 }
 
 .auth-buttons {
     width: 178px;
-    height: 30px;
-    left: 1265px;
+    height: 39.6px;
+    left: 1285px;
     top: 40px;
     position: absolute;
     display: inline-flex;
@@ -228,11 +243,11 @@ html, body {
     font-weight: 700;
 }
 
-.main{
+.main {
     position: absolute;
     top: 400px;
     left: 80px;
-    display:flex;
+    display: flex;
     gap: 30px;
     flex-wrap: wrap;
 }
@@ -253,7 +268,8 @@ html, body {
     top: 0dvb;
 }
 
-.view-button, .delete-button {
+.view-button,
+.delete-button {
     width: 145px;
     height: 53px;
     position: absolute;

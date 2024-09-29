@@ -17,6 +17,28 @@
                 window.location.href = 'home.html';
             }, 100);
         }
+       
+        function goToDocuments() {
+            // Trigger the background fade-in by adding a class that changes the background color
+            document.querySelector('.documents').classList.add('fade-in-bg');
+            document.querySelector('.cart').style.backgroundColor = 'transparent';
+            
+            // Delay the navigation by 900 ms
+            setTimeout(function() {
+                window.location.href = 'Documents.html';
+            }, 100);
+        }
+       
+        function goToTransactionHistory() {
+            // Trigger the background fade-in by adding a class that changes the background color
+            document.querySelector('.transaction-history').classList.add('fade-in-bg');
+            document.querySelector('.cart').style.backgroundColor = 'transparent';
+            
+            // Delay the navigation by 900 ms
+            setTimeout(function() {
+                window.location.href = 'TransactionHistory.html';
+            }, 100);
+        }
     </script>
 </head>
 
@@ -32,8 +54,8 @@
 
                 <div class="menu-item home" onclick="goToHome()">Home</div>
                 <div class="menu-item cart" onclick="window.location.href='cart.html'">Cart</div>
-                <div class="menu-item documents" onclick="window.location.href='Documents.html'">Documents</div>
-                <div class="menu-item transaction-history" onclick="window.location.href='TransactionHistory.html'">
+                <div class="menu-item documents" onclick="goToDocuments()">Documents</div>
+                <div class="menu-item transaction-history" onclick="goToTransactionHistory()">
                     Transaction History</div>
                     <div class="menu-item order">Order</div>
                     

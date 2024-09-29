@@ -147,8 +147,8 @@ body {
 
 .auth-buttons {
     width: 178px;
-    height: 30px;
-    left: 1265px;
+    height: 39.6px;
+    left: 1285px;
     top: 40px;
     position: absolute;
     display: inline-flex;
@@ -199,18 +199,23 @@ body {
 
 
 .documents {
-    left: 865px;
+    left: 860px;
     top: 40px;
+    background-color: transparent;
+    transition: background-color 0.2s ease-in;
 }
 
 .transaction-history {
-    left: 955px;
+    left: 992px;
     top: 40px;
-    width: 202px;
+    width: 143px;
+    background-color: transparent;
+    transition: background-color 0.2s ease-in;
+
 }
 
 .order {
-    left: 1165px;
+    left: 1185px;
     top: 40px;
 }
 
@@ -218,11 +223,19 @@ body {
     left: 685px;
     top: 40px;
     background: #F5F5F5;
+    transition: background-color 0.2s ease-in;
 }
 
 .cart {
-    left: 775px;
+    left: 779px;
     top: 40px;
+    background-color: transparent;
+    transition: background-color 0.2s ease-in;
+}
+
+.fade-in-bg {
+    background-color: white;
+    /* The color it fades to */
 }
 
 .brand {

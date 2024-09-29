@@ -85,18 +85,22 @@ body {
 }
 
 .documents {
-  left: 865px;
+  left: 860px;
   top: 40px;
+  background-color: transparent;  /* Initially transparent */
+  transition: background-color 0.2s ease-in; /* Controls the fade-in effect */ 
 }
 
 .transaction-history {
-  left: 955px;
+  left: 992px;
   top: 40px;
-  width: 202px;
+  width: 143px;
+  background-color: transparent;  /* Initially transparent */
+  transition: background-color 0.2s ease-in; /* Controls the fade-in effect */ 
 }
 
 .order {
-  left: 1165px;
+  left: 1185px;
   top: 40px;
 }
 
@@ -109,22 +113,22 @@ body {
 
 
 /* Fade-in background color class */
+
+.cart {
+  left: 779px;
+  top: 40px;
+  background: #F5F5F5; /* Initial background color for the Cart button */
+  transition: background-color 0.2s ease-in; /* Controls the fade-in effect */ 
+  
+}
+
 .fade-in-bg {
   background-color: white; /* The color it fades to */
 }
-
-.cart {
-  left: 775px;
-  top: 40px;
-  /* background: #F5F5F5; */
-  background: #F5F5F5; /* Initial background color for the Cart button */
-  /* transition: background-color 10s ease; Transition effect for Cart button background */
-}
-
 .auth-buttons {
   width: 178px;
-  height: 30px;
-  left: 1265px;
+  height: 39.6px;
+  left: 1285px;
   top: 40px;
   position: absolute;
   display: inline-flex;
