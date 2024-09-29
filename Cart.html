@@ -6,30 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Cart.css">
     <title>Cart</title>
+    <script>
+        function goToHome() {
+            // Trigger the background fade-in by adding a class that changes the background color
+            document.querySelector('.home').classList.add('fade-in-bg');
+            document.querySelector('.cart').style.backgroundColor = 'transparent';
+            
+            // Delay the navigation by 900 ms
+            setTimeout(function() {
+                window.location.href = 'home.html';
+            }, 100);
+        }
+    </script>
 </head>
 
 <body>
     <div class="container">
-
-        <!-- <div class="gradient-container">
-            <img class="img-absolute" src="Logo.png" />
-        </div>
-
-        <div class="menu">
-
-            <div class="menu-title">PrintPay</div>
-            <div class="menu-link">Home</div>
-            <div class="menu-link background-light">Cart</div>
-            <div class="menu-link">Documents</div>
-            <div class="menu-link flex-grow">Transaction History</div>
-            <div class="menu-link">Order</div>
-            <div class="auth-links">
-                <div class="auth-link 
-                ">Sign in</div>
-                <div class="auth-link dark">Register</div>
-            </div>
-
-        </div> -->
 
         <nav class="navbar">
     
@@ -38,7 +30,7 @@
                 <img class="profile-img" src="Logo.png" />
                 <div class="title">PrintPay</div>
 
-                <div class="menu-item home" onclick="window.location.href='home.html'">Home</div>
+                <div class="menu-item home" onclick="goToHome()">Home</div>
                 <div class="menu-item cart" onclick="window.location.href='cart.html'">Cart</div>
                 <div class="menu-item documents" onclick="window.location.href='Documents.html'">Documents</div>
                 <div class="menu-item transaction-history" onclick="window.location.href='TransactionHistory.html'">

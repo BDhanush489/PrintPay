@@ -1,3 +1,12 @@
+.home {
+  transition: opacity 0.9s ease; /* This controls how long the fade out takes */
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.9s ease-in;
+}
+
 html,
 body {
   margin: 0;
@@ -94,12 +103,22 @@ body {
 .home {
   left: 685px;
   top: 40px;
+  background-color: transparent;  /* Initially transparent */
+  transition: background-color 0.2s ease-in; /* Controls the fade-in effect */ 
+}
+
+
+/* Fade-in background color class */
+.fade-in-bg {
+  background-color: white; /* The color it fades to */
 }
 
 .cart {
   left: 775px;
   top: 40px;
-  background: #F5F5F5;
+  /* background: #F5F5F5; */
+  background: #F5F5F5; /* Initial background color for the Cart button */
+  /* transition: background-color 10s ease; Transition effect for Cart button background */
 }
 
 .auth-buttons {
@@ -185,7 +204,6 @@ body {
 .amount {
   top: 156px;
 }
-
 
 .content {
   width: 871px;
