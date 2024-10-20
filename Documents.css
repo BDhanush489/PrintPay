@@ -5,16 +5,13 @@ body {
     box-sizing: border-box;
     min-height: 140%;
     width: 100%;
-    /* This allows the background to grow beyond the viewport if content is taller */
     background: linear-gradient(to top, rgb(0, 255, 251), rgb(242, 0, 255));
     background-repeat: no-repeat;
     background-size: cover;
-    /* Ensures the background covers the viewport fully */
 }
 
 
 .navbar {
-    /* width: 100; */
     display: flex;
     align-items: center;
 }
@@ -23,7 +20,6 @@ body {
 .profile-container {
     position: absolute;
     display: flex;
-    /* flex-direction: row; */
     width: 275px;
     height: 120px;
     left: 0px;
@@ -72,6 +68,11 @@ body {
     top: 40px;
     background: #F5F5F5;
     transition: background-color 0.2s ease-in;
+}
+
+#fileInput{
+    width: 200px;
+    display: none;
 }
 
 .transaction-history {
@@ -166,7 +167,8 @@ body {
 
 .heading {
     position: relative;
-    top: 51px;
+    width: 300px;
+    top: 165px;
     left: 77px;
     color: black;
     font-size: 37px;
@@ -192,35 +194,33 @@ body {
 }
 
 .container {
-    width: 100%;
+    position: absolute;
     min-height: 100%;
+    width: 100%;
     /* Ensures the container fills the entire document height */
-    box-shadow: -8px -21px 250px -240px white inset;
-    border-radius: 0px;
+    /* box-shadow: -8px -21px 250px -240px white inset; */
+    /* border-radius: 0px; */
 }
 
 .gray-bar {
     width: 90%;
-    height: 70px;
+    height: 60px;
     position: absolute;
     left: 65px;
-    top: 237px;
+    top: 240px;
     background: #D9D9D9;
     border-radius: 43px;
+    border: none;
+    font-size: 25px;
+    padding-left: 21px;
+
     /* mix-blend-mode: luminosity; */
 }
 
-
-
-
-.heading {
-    position: absolute;
-    left: 53px;
-    top: 159px;
-    color: black;
-    font-size: 50px;
-    font-weight: 700;
+.gray-bar:focus{
+    outline: none;
 }
+
 
 .upload-button {
     width: 281px;
@@ -231,6 +231,8 @@ body {
     background: linear-gradient(90deg, rgba(0, 255, 71.40, 0.96) 0%, rgba(0, 190.40, 53.31, 0.96) 100%);
     box-shadow: 0px 4px 3px rgba(0, 0, 0, 0.25);
     border-radius: 90px;
+    border: none;
+
 }
 
 .upload-text {
@@ -245,8 +247,8 @@ body {
 
 .main {
     position: absolute;
-    top: 400px;
-    left: 80px;
+    top: 350px;
+    left: 75px;
     display: flex;
     gap: 30px;
     flex-wrap: wrap;
@@ -312,4 +314,12 @@ body {
     font-size: 28px;
     font-weight: 400;
     color: black;
+}
+
+#documentContainer{
+    display: flex;
+    position: relative;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
 }

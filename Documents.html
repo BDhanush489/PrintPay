@@ -11,31 +11,31 @@
             // Trigger the background fade-in by adding a class that changes the background color
             document.querySelector('.home').classList.add('fade-in-bg');
             document.querySelector('.cart').style.backgroundColor = 'transparent';
-            
+
             // Delay the navigation by 900 ms
-            setTimeout(function() {
+            setTimeout(function () {
                 window.location.href = 'home.html';
             }, 100);
         }
-       
+
         function goToDocuments() {
             // Trigger the background fade-in by adding a class that changes the background color
             document.querySelector('.documents').classList.add('fade-in-bg');
             document.querySelector('.cart').style.backgroundColor = 'transparent';
-            
+
             // Delay the navigation by 900 ms
-            setTimeout(function() {
+            setTimeout(function () {
                 window.location.href = 'Documents.html';
             }, 100);
         }
-       
+
         function goToTransactionHistory() {
             // Trigger the background fade-in by adding a class that changes the background color
             document.querySelector('.transaction-history').classList.add('fade-in-bg');
             document.querySelector('.cart').style.backgroundColor = 'transparent';
-            
+
             // Delay the navigation by 900 ms
-            setTimeout(function() {
+            setTimeout(function () {
                 window.location.href = 'TransactionHistory.html';
             }, 100);
         }
@@ -49,6 +49,9 @@
                 window.location.href = 'Cart.html';
             }, 100);
         }
+
+        // Trigger file input on clicking the Upload Documents button
+
     </script>
 </head>
 
@@ -56,7 +59,7 @@
     <div class="container">
 
         <nav class="navbar">
-    
+
             <div class="profile-container">
 
                 <img class="profile-img" src="Logo.png" />
@@ -68,31 +71,34 @@
                 <div class="menu-item transaction-history" onclick="goToTransactionHistory()">
                     Transaction History</div>
 
-                    <div class="menu-item order">Order</div>
-                    
-                    <div class="auth-buttons">
-                        <div class="auth-button sign-in">Sign in</div>
-                        <div class="auth-button register">Register</div>
-                    </div>
+                <div class="menu-item order">Order</div>
+
+                <div class="auth-buttons">
+                    <div class="auth-button sign-in">Sign in</div>
+                    <div class="auth-button register">Register</div>
+                </div>
             </div>
         </nav>
 
 
         <div class="heading">Your Documents</div>
 
-        <div class="gray-bar"></div>
+        <input type="text" class="gray-bar">
 
-        <div class="upload-button">
-            <div class="upload-text">Upload Documents</div>
-        </div>
+        <button class="upload-button" id="uploadButton">
+            <label for="file-upload" class="upload-text">Upload Documents</label>
+        </button>
+        <input id="file-upload" style="display:none" type="file" />
 
         <div class="main">
-            <div class="document financial-report">
+            <div id="documentContainer"></div> <!-- This will hold the dynamically added div -->
+
+            <!-- <div class="document financial-report">
                 <div class="document-bg"></div>
-                <div class="view-button">View</div>
+                <div class="view-button">Viewefw</div>
                 <div class="delete-button">Delete</div>
-                <div class="document-title">Financial Report</div>
-                <div class="document-uploaded">Uploaded on 2023-09-02</div>
+                <div id="documentTitle" class="document-title">Financial Report</div>
+                <div id="documentUploaded" class="document-uploaded">Uploaded on 2023-09-02</div>
             </div>
             <div class="document financial-report">
                 <div class="document-bg"></div>
@@ -114,7 +120,7 @@
                 <div class="delete-button">Delete</div>
                 <div class="document-title">Financial Report</div>
                 <div class="document-uploaded">Uploaded on 2023-09-02</div>
-            </div>
+            </div> -->
         </div>
         <!-- Add more document blocks here as needed -->
 
@@ -122,3 +128,48 @@
 </body>
 
 </html>
+<script>
+    const fileInput = document.getElementById('file-upload');
+    const documentContainer = document.getElementById('documentContainer');
+
+    // Handle the file selection
+    fileInput.addEventListener('change', function (event) {
+        const file = event.target.files[0]; // Get the selected file
+        if (file) {
+            const fileName = file.name; // Get the file name
+            const fileUrl = URL.createObjectURL(file);
+
+            // Create new div with the file name
+            const newDocument = `
+                <div class="document financial-report">
+                <div class="document-bg"></div>
+                <div class="view-button" data-url="${fileUrl}">View</div>
+                <div class="delete-button">Delete</div>
+                <div class="document-title">${fileName}</div>
+                <div class="document-uploaded">Uploaded on ${new Date().toLocaleDateString()}</div>
+                </div>
+            `;
+
+            // Append the new div into the document container
+            documentContainer.insertAdjacentHTML('beforeend', newDocument);
+
+            const viewButtons = document.querySelectorAll('.view-button');
+            viewButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const url = this.getAttribute('data-url'); // Get the file URL
+                    window.open(url);
+                });
+            });
+
+            const deleteButtons = document.querySelectorAll('.delete-button');
+            deleteButtons.forEach(button => {
+                button.addEventListener('click', function (e) {
+                    e.stopPropagation(); // Prevent the click event from bubbling to the parent div
+                    const documentDiv = this.parentElement; // Get the parent div (the document div)
+                    documentContainer.removeChild(documentDiv); // Remove the document div
+                });
+            });
+
+        }
+    });
+</script>

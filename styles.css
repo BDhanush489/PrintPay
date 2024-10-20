@@ -13,7 +13,6 @@ body {
 .container {
     width: 100vw;
     height: 100vh;
-    /* Fill the entire viewport */
     box-shadow: -8px -21px 250px -240px white inset;
     border-radius: 0px;
     overflow: hidden;
@@ -21,7 +20,7 @@ body {
 
 .video {
     transform: scale(1.2);
-    opacity: 0.8;
+    opacity: 1;
     /* opacity: 0; Removes the video */
     width: 100vw;
     /* Adjust video width */
@@ -88,7 +87,7 @@ body {
     position: fixed;
     position: absolute;
     opacity: 0;
-    animation: fadeOut 3s forwards;
+    animation: fadeOut 6s forwards;
 }
 
 @keyframes fadeOut {
