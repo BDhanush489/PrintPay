@@ -11,31 +11,31 @@
             // Trigger the background fade-in by adding a class that changes the background color
             document.querySelector('.home').classList.add('fade-in-bg');
             document.querySelector('.cart').style.backgroundColor = 'transparent';
-            
+
             // Delay the navigation by 900 ms
-            setTimeout(function() {
+            setTimeout(function () {
                 window.location.href = 'home.html';
             }, 100);
         }
-       
+
         function goToDocuments() {
             // Trigger the background fade-in by adding a class that changes the background color
             document.querySelector('.documents').classList.add('fade-in-bg');
             document.querySelector('.cart').style.backgroundColor = 'transparent';
-            
+
             // Delay the navigation by 900 ms
-            setTimeout(function() {
+            setTimeout(function () {
                 window.location.href = 'Documents.html';
             }, 100);
         }
-       
+
         function goToTransactionHistory() {
             // Trigger the background fade-in by adding a class that changes the background color
             document.querySelector('.transaction-history').classList.add('fade-in-bg');
             document.querySelector('.cart').style.backgroundColor = 'transparent';
-            
+
             // Delay the navigation by 900 ms
-            setTimeout(function() {
+            setTimeout(function () {
                 window.location.href = 'TransactionHistory.html';
             }, 100);
         }
@@ -46,7 +46,7 @@
     <div class="container">
 
         <nav class="navbar">
-    
+
             <div class="profile-container">
 
                 <img class="profile-img" src="Logo.png" />
@@ -57,17 +57,46 @@
                 <div class="menu-item documents" onclick="goToDocuments()">Documents</div>
                 <div class="menu-item transaction-history" onclick="goToTransactionHistory()">
                     Transaction History</div>
-                    <div class="menu-item order">Order</div>
-                    
-                    <div class="auth-buttons">
-                        <div class="auth-button sign-in">Sign in</div>
-                        <div class="auth-button register">Register</div>
-                    </div>
+                <div class="menu-item order">Order</div>
+
+                <div class="auth-buttons">
+                    <div class="auth-button sign-in">Sign in</div>
+                    <div class="auth-button register">Register</div>
+                </div>
             </div>
         </nav>
 
 
         <div class="content">
+            <!-- 
+            <div class="content-overlay"> </div>
+            <div class="cart-title">Cart</div>
+            <div class="first-sub-heading">
+                <div class="subtext-title">Selected Items</div>
+                <div class="subtext-title right">Total Cost</div>
+            </div> -->
+
+            <!-- <div class="first-item">
+                <div class="box first-box"></div>
+                <div class="first-box-text">
+                    <div class="title-large"></div>
+                    <div class="subtext">Amount: 100</div>
+                    <div class="subtext">Transaction ID: 4532</div>
+                </div>
+                <div class="subtext-title-deduc">Deduction</div>
+            </div>
+
+            <div class="first-item">
+                <div class="box first-box"></div>
+                <div class="first-box-text">
+                    <div class="title-large">RFID Transaction Points</div>
+                    <div class="subtext">Amount: 100</div>
+                    <div class="subtext">Transaction ID: 4532</div>
+                </div>
+                <div class="subtext-title-deduc">Deduction</div>
+            </div>
+
+            <div id="firstBoxText"></div> -->
 
             <div class="content-overlay"> </div>
             <div class="cart-title">Cart</div>
@@ -76,25 +105,7 @@
                 <div class="subtext-title right">Total Cost</div>
             </div>
 
-            <div class="first-item">
-                <div class="box first-box"></div>
-                <div class="first-box-text">
-                    <div class="title-large">RFID Transaction Points</div>
-                    <div class="subtext">Amount: 100</div>
-                    <div class="subtext">Transaction ID: 4532</div>
-                </div>
-                <div class="subtext-title-deduc">Deduction</div>
-            </div>
-
-            <div class="first-item">
-                <div class="box first-box"></div>
-                <div class="first-box-text">
-                    <div class="title-large">RFID Transaction Points</div>
-                    <div class="subtext">Amount: 100</div>
-                    <div class="subtext">Transaction ID: 4532</div>
-                </div>
-                <div class="subtext-title-deduc">Deduction</div>
-            </div>
+            <div id="firstBoxText"></div>
 
             <div class="proceed-btn">
                 <div class="proceed-text">Proceed TO Payment</div>
@@ -109,3 +120,102 @@
 
 
 </html>
+
+<!-- <script>
+
+    // Retrieve the cart items from localStorage
+    const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+    const firstBoxText = document.querySelector('.first-item');
+    const nameDiv = firstBoxText.querySelector('.title-large');
+    const imageDiv = firstBoxText.querySelector('.first-box');
+
+    // Display the last added item in the cart (for example)
+    if (cartItems.length > 0) {
+        const lastItem = cartItems[cartItems.length - 1];
+
+        // Set the image name and preview
+        nameDiv.textContent = lastItem.fileName;
+        imageDiv.innerHTML = `<img src="${lastItem.fileUrl}" alt="${lastItem.fileName}" />`;
+
+        console.log(nameDiv)
+        console.log(imageDiv)
+    } else {
+        nameDiv.textContent = 'No items in cart';
+    }
+
+    cartItems.forEach(item => {
+        const itemHTML = `
+        <div class="cart-item">
+            <div class="name of the image">${item.fileName}</div>
+            <div class="image"><img src="${item.fileUrl}" alt="${item.fileName}" /></div>
+        </div>
+    `;
+        firstBoxText.insertAdjacentHTML('beforeend', itemHTML);
+    });
+
+
+</script> -->
+
+<!-- <script>
+
+    // Retrieve the cart items from localStorage
+    const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+    const firstBoxText = document.getElementById('firstBoxText');
+
+    // Loop through the cartItems and create HTML for each item
+    cartItems.forEach((item, index) => {
+        console.log(item)
+        const itemHTML = `
+            <div class="first-item">
+                <div class="box first-box">
+                    <img src="${item.fileUrl}" alt="${item.fileName}" style="width: 1000px; height: 1000px;" />
+                </div>
+                <div class="first-box-text">
+                    <div class="title-large">${item.fileName}</div>
+                    <div class="subtext">Amount: 100</div> 
+                    <div class="subtext">Transaction ID: ${Math.floor(Math.random() * 10000)}</div>
+                </div>
+                <div class="subtext-title-deduc">Deduction</div>
+            </div>
+        `;
+        // Append the new HTML for each item to the cart
+        firstBoxText.insertAdjacentHTML('beforeend', itemHTML);
+    });
+
+    if (cartItems.length === 0) {
+        firstBoxText.innerHTML = '<div class="empty-cart">No items in cart</div>';
+    }
+</script> -->
+
+
+<script>
+    // Retrieve the cart items from localStorage
+    const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+    const firstBoxText = document.getElementById('firstBoxText');
+
+    // Loop through the cartItems and create HTML for each item
+    cartItems.forEach((item, index) => {
+        const itemHTML = `
+            <div class="first-item">
+                <div class="box first-box">
+                    <img src="${item.fileUrl}" alt="${item.fileName}" style="border-radius: 30px; width: 183px; height: 156px;" />
+                </div>
+                <div class="first-box-text">
+                    <div class="title-large">${item.fileName}</div>
+                    <div class="subtext">Amount: 100</div> <!-- You can replace '100' with dynamic data if needed -->
+                    <div class="subtext">Transaction ID: ${Math.floor(Math.random() * 10000)}</div>
+                </div>
+                <div class="subtext-title-deduc">Deduction</div>
+            </div>
+        `;
+        // Append the new HTML for each item to the cart
+        firstBoxText.insertAdjacentHTML('beforeend', itemHTML);
+    });
+
+    if (cartItems.length === 0) {
+        firstBoxText.innerHTML = '<div class="empty-cart">No items in cart</div>';
+    }
+</script>

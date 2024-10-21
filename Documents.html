@@ -128,7 +128,8 @@
 </body>
 
 </html>
-<script>
+<!-- <script>
+
     const fileInput = document.getElementById('file-upload');
     const documentContainer = document.getElementById('documentContainer');
 
@@ -139,12 +140,15 @@
             const fileName = file.name; // Get the file name
             const fileUrl = URL.createObjectURL(file);
 
+            
+
             // Create new div with the file name
             const newDocument = `
                 <div class="document financial-report">
                 <div class="document-bg"></div>
                 <div class="view-button" data-url="${fileUrl}">View</div>
                 <div class="delete-button">Delete</div>
+                <div class="add-to-cart-button">Add To Cart</div>
                 <div class="document-title">${fileName}</div>
                 <div class="document-uploaded">Uploaded on ${new Date().toLocaleDateString()}</div>
                 </div>
@@ -170,6 +174,103 @@
                 });
             });
 
+            const addToCartButtons = document.querySelectorAll('.add-to-cart-button');
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const file = event.target.files[0]; // Get the selected file
+
+                    const fileName = file.name;
+                    const fileUrl = URL.createObjectURL(file);
+
+                    // Save to localStorage
+                    const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+                    cartItems.push({ fileName, fileUrl });
+                    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+                    alert(`${fileName} added to cart!`);
+                });
+            });
         }
     });
+
+</script> -->
+
+<script>
+    // Function to convert file to Base64
+    function getBase64(file, callback) {
+        const reader = new FileReader();
+        reader.onload = function () {
+            callback(reader.result); // Base64 string
+        };
+        reader.onerror = function (error) {
+            console.log('Error: ', error);
+        };
+        reader.readAsDataURL(file);
+    }
+
+    const fileInput = document.getElementById('file-upload');
+    const documentContainer = document.getElementById('documentContainer');
+
+
+    fileInput.addEventListener('change', function (event) {
+        const file = event.target.files[0]; // Get the selected file
+        if (file) {
+            const fileName = file.name; // Get the file name
+            const fileUrl = URL.createObjectURL(file);
+
+            // Convert the file to Base64
+            getBase64(file, function (base64FileUrl) {
+                // Create new div with the file name
+                const newDocument = `
+                <div class="document financial-report">
+                    <div class="document-bg"></div>
+                    <div class="view-button" data-url="${base64FileUrl}">View</div>
+                    <div class="delete-button">Delete</div>
+                    <div class="add-to-cart-button" data-name="${fileName}" data-url="${base64FileUrl}">Add To Cart</div>
+                    <div class="document-title">${fileName}</div>
+                    <div class="document-uploaded">Uploaded on ${new Date().toLocaleDateString()}</div>
+                </div>
+            `;
+
+                // Append the new div into the document container
+                documentContainer.insertAdjacentHTML('beforeend', newDocument);
+
+                // Handle "View" button
+                const viewButtons = document.querySelectorAll('.view-button');
+                viewButtons.forEach(button => {
+                    button.addEventListener('click', function () {
+                        const url = fileUrl; // Get the file URL
+                        window.open(url);
+                    });
+                });
+
+                // Handle "Delete" button
+                const deleteButtons = document.querySelectorAll('.delete-button');
+                deleteButtons.forEach(button => {
+                    button.addEventListener('click', function (e) {
+                        e.stopPropagation();
+                        const documentDiv = this.parentElement;
+                        documentContainer.removeChild(documentDiv);
+                    });
+                });
+
+                // Handle "Add to Cart" button
+                const addToCartButtons = document.querySelectorAll('.add-to-cart-button');
+                addToCartButtons.forEach(button => {
+                    button.addEventListener('click', function () {
+                        const fileName = this.getAttribute('data-name');
+                        const fileUrl = this.getAttribute('data-url');
+
+                        // Save to localStorage
+                        const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+                        cartItems.push({ fileName, fileUrl });
+                        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+                        alert(`${fileName} added to cart!`);
+                    });
+                });
+            });
+        }
+    });
+
 </script>
