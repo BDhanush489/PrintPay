@@ -98,7 +98,7 @@
         <div class="user-info username">Username: John</div>
         <div class="user-info document1">Printed Document: Project Report</div>
         <div class="user-info rfid">RFID Card Number: 1263-1243-4123</div>
-        <div class="user-info points">Point Balance: 2500</div>
+        <div id="points" class="user-info points">2500</div>
         <div class="user-info recharged">Recharged Points: 100</div>
         <div class="user-info document2">Printed Document: Invoice</div>
 
@@ -109,3 +109,18 @@
 </body>
 
 </html>
+
+<script>
+    // Ensure that points are stored in localStorage (you can initialize it if it doesn't exist)
+    if (!localStorage.getItem('userPoints')) {
+        localStorage.setItem('userPoints', '2500'); // Initial points if not already set
+    }
+
+    // Update points in the div when the page loads
+    document.addEventListener("DOMContentLoaded", function() {
+        const pointsDiv = document.getElementById('points');  // Target the div with id="points"
+        const currentPoints = localStorage.getItem('userPoints');  // Retrieve points from localStorage
+        pointsDiv.textContent = currentPoints;  // Update the div content to show the current points
+    });
+    
+</script>
